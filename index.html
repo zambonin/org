@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,773 +8,707 @@
     content="Personal website of Gustavo Zambonin, a computer scientist that
              specializes in cryptography and information security.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base target="_blank">
 
   <!-- Flamenco capital Z, size 128 from https://favicon.io/ -->
   <link rel="icon" sizes="16x16 32x32 48x48" href="static/favicon.ico">
-  <link rel="stylesheet"
-        href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.sand.min.css">
+  <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 
 <body>
-  <main>
-    <article>
-      <nav>
-        <ul>
-          <li>
-            <h1>Gustavo Zambonin</h1>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a data-tooltip="GitHub" href="https://github.com/zambonin">
-                <h1>🗃️</h1></a>
-          </li>
-          <li>
-            <a data-tooltip="E-mail" href="mailto:zambonin@pm.me">
-                <h1>📮</h1></a>
-          </li>
-          <li>
-            <a data-tooltip="Curriculum vitae" href="static/cv.pdf">
-                <h1>📑</h1></a>
-          </li>
-        </ul>
-      </nav>
+  <header>
+    <h1><a href="#about">Gustavo Zambonin</a></h1>
+    <nav>
+      <span>
+        <a href="#research">research</a> //
+        <a href="#teaching">teaching</a> //
+        <a href="#service">service</a> //
+        <a href="#work">work</a> //
+      </span>
+      <span>
+        <a href="https://github.com/zambonin">code</a> //
+        <a href="mailto:zambonin@pm.me">mail</a> //
+        <a href="static/cv.pdf">cv</a> //
+      </span>
+    </nav>
+  </header>
 
-      <p>
-        I am a PhD student at the
-        <a href="https://labsec.ufsc.br">Computer Security Lab</a> of the
-        <a href="https://ufsc.br">Universidade Federal de Santa Catarina</a>,
-        researching novel combinatorial (un)ranking algorithms to generate
-        random objects in quantum-safe cryptosystems.
-      </p>
-
+  <section id="about">
+    <p>
+      I am a PhD student at the
+      <a href="https://labsec.ufsc.br">Computer Security Lab</a> of the
+      <a href="https://ufsc.br">Universidade Federal de Santa Catarina</a>
+      (UFSC), researching novel combinatorial (un)ranking algorithms to
+      generate random objects in quantum-safe cryptosystems.
+    </p>
+    <p>
+      I also work as a consultant, helping private and public institutions to
+      solve complex problems related to information security and computer
+      science in general. Before starting my PhD, I worked in the reference
+      implementation and technical specifications of the Brazilian Digital
+      Signature Standard.
+    </p>
+    <p>
       On a personal note, I’m enthusiastic about astronomy, immersive sim
-      games, IBM keyboards specifically older than myself and most songs with
+      games, IBM keyboards specifically older than myself, and most songs with
       a saxophone line. 8)
-    </article>
+    </p>
+  </section>
 
-    <article>
-      <h3>Publications</h3>
-      <p>
-        I am interested in quantum-safe cryptosystems and their applications,
-        particularly hash-based signatures.
-      </p>
-      <details>
-        <summary role="button">
-          Click to see a list of works I have (co-)authored.
-        </summary>
+  <section id="research">
+    <p>
+      A list of my publications. See also my
+      <a href="https://dblp.org/pid/230/1832.html">dblp</a>,
+      <a href="https://scholar.google.com/citations?user=_lVoIzUAAAAJ">Google Scholar</a>,
+      and <a href="https://orcid.org/0000-0002-6962-9347">ORCID</a> profiles.
+    </p>
+    <dl>
+      <dt id="helios-pqc">
+        From ElGamal to Lattice-Based: Enhancing the Helios Voting System with
+        Quantum-Safe Cryptography
+      </dt>
+      <dd>
+        J. P. C. Barbosa, G. Zambonin, T. B. Idalino, R. Custódio.<br>
+        ACNS (3) 2025, pp. 29–49, June 2025.
+        <nav>
+          <a href="https://doi.org/10.1007/978-3-031-95767-3_2">Paper</a>
+          <a href="https://github.com/jp-db/voting-protocol-acns">Code</a>
+        </nav>
+      </dd>
+      <dt id="sim-swap">
+        Enhanced SIM Swap Security Practices via Ceremony Modeling
+      </dt>
+      <dd>
+        L. G. Rosa, G. Zambonin, J. E. Martina.<br>
+        AINA (5) 2025, pp. 201–211, April 2025.
+        <nav>
+          <a href="https://doi.org/10.1007/978-3-031-87775-9_17">Paper</a>
+          <a href="https://github.com/LarissaGRosa/SIMSwapModel">Code</a>
+        </nav>
+      </dd>
+      <dt id="mtss">
+        Practical algorithms and parameters for modification-tolerant signature
+        scheme
+      </dt>
+      <dd>
+        A. B. Kamers, P. O. Abel, T. B. Idalino, G. Zambonin, J. E. Martina.<br>
+        SBSeg 2024, pp. 522–537, September 2024.
+        <nav>
+          <a href="https://doi.org/10.5753/sbseg.2024.241677">Paper</a>
+          <a href="https://github.com/AnthonyKamers/mtss-signer">Code</a>
+        </nav>
+      </dd>
+      <dt id="lip-kem">
+        A concrete LIP-based KEM with simple lattices
+      </dt>
+      <dd>
+        G. C. Biage, G. Zambonin, T. B. Idalino, D. Panario, R. Custódio.<br>
+        IEEE Access 12, pp. 16408–16420, January 2024.
+        <nav>
+          <a href="https://doi.org/10.1109/ACCESS.2024.3358670">Paper</a>
+          <a href="https://github.com/gustavobiage/LIPb-KEM">Code</a>
+        </nav>
+      </dd>
+      <dt id="key-usage">
+        Monitoring key pair usage through distributed ledgers and one-time
+        signatures
+      </dt>
+      <dd>
+        L. Mayr, L. Palma, G. Zambonin, W. Silvano, R. Custódio.<br>
+        Information 14, no. 10, September 2023.
+        <nav>
+          <a href="https://doi.org/10.3390/info14100523">Paper</a>
+        </nav>
+      </dd>
+      <dt id="constant-sum">
+        Improved constant-sum encodings for hash-based signatures
+      </dt>
+      <dd>
+        L. P. Perin, G. Zambonin, R. Custódio, L. Moura, D. Panario.<br>
+        Journal of Cryptographic Engineering 11, no. 4, pp. 329–351, June 2021.
+        <nav>
+          <a href="https://doi.org/10.1007/s13389-021-00264-9">Paper</a>
+          <a href="https://github.com/zambonin/wots-cs">Code</a>
+        </nav>
+      </dd>
+      <dt id="msc">
+        On the randomness of Rainbow signatures
+      </dt>
+      <dd>
+        G. Zambonin.<br>
+        Master's thesis in Computer Science, Universidade Federal de Santa
+        Catarina, October 2020.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/219497">Paper</a>
+          <a href="https://github.com/zambonin/msc">Code</a>
+        </nav>
+      </dd>
+      <dt id="rainbow-vinegar">
+        Handling Vinegar Variables to Shorten Rainbow Private Keys
+      </dt>
+      <dd>
+        G. Zambonin, M. S. P. Bittencourt, R. Custódio.<br>
+        AFRICACRYPT 2019, pp. 391–408, July 2019.
+        <nav>
+          <a href="https://doi.org/10.1007/978-3-030-23696-0_20">Paper</a>
+          <a href="https://github.com/matheuspb/rainbow-eta">Code</a>
+        </nav>
+      </dd>
+      <dt id="tuning-wots">
+        Tuning the Winternitz Hash-Based Digital Signature Scheme
+      </dt>
+      <dd>
+        L. P. Perin, G. Zambonin, D. M. B. Martins, R. Custódio, J. E. Martina.<br>
+        ISCC 2018, pp. 537–542, June 2018.
+        <nav>
+          <a href="https://doi.org/10.1109/ISCC.2018.8538642">Paper</a>
+          <a href="https://github.com/zambonin/xmss-reference">Code</a>
+        </nav>
+      </dd>
+      <dt id="bsc">
+        Otimização de desempenho do esquema de assinatura digital Winternitz
+      </dt>
+      <dd>
+        [Performance optimization of the Winternitz digital signature scheme]<br>
+        G. Zambonin.<br>
+        Bachelor thesis in Computer Science, Universidade Federal de Santa
+        Catarina, June 2018.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/187875">Paper</a>
+          <a href="https://github.com/zambonin/bsc">Code</a>
+        </nav>
+      </dd>
+    </dl>
+  </section>
 
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                J. P. C. Barbosa, G. Zambonin, T. B. Idalino, R. Custódio.
-                <b>From ElGamal to Lattice-Based: Enhancing the Helios Voting
-                    System with Quantum-Safe Cryptography</b>.
-                <abbr data-placement="bottom"
-                    data-tooltip="International Conference on Applied Cryptography and Network Security">
-                    ACNS</abbr> 2025, pp. 29–49, jun. 2025.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1007/978-3-031-95767-3_2">📃</a>
-                <a href="https://github.com/jp-db/voting-protocol-acns">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                L. G. Rosa, G. Zambonin, J. E. Martina.
-                <b>Enhanced SIM Swap Security Practices via Ceremony
-                    Modeling</b>.
-                <abbr data-placement="bottom"
-                    data-tooltip="International Conference on Advanced Information Networking and Applications">
-                    AINA</abbr> 2025, pp. 201–211, apr. 2025.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1007/978-3-031-87775-9_17">📃</a>
-                <a href="https://github.com/LarissaGRosa/SIMSwapModel">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                A. B. Kamers, P. O. Abel, T. B. Idalino, G. Zambonin,
-                J. E. Martina.
-                <b>Practical algorithms and parameters for
-                    modification-tolerant signature scheme</b>.
-                <abbr data-placement="bottom"
-                    data-tooltip="Brazilian Symposium on Information and Computational Systems Security">
-                    SBSeg</abbr> 2024, pp. 522–537, set. 2024.
-              </th>
-              <td>
-                <a href="https://doi.org/10.5753/sbseg.2024.241677">📃</a>
-                <a href="https://github.com/AnthonyKamers/mtss-signer">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                G. C. Biage, G. Zambonin, T. B. Idalino, D. Panario,
-                R. Custódio.
-                <b>A concrete LIP-based KEM with simple lattices</b>.
-                IEEE Access 12, pp. 16408–16420, jan. 2024.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1109/ACCESS.2024.3358670">📃</a>
-                <a href="https://github.com/gustavobiage/LIPb-KEM">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                L. Mayr, L. Palma, G. Zambonin, W. Silvano, R. Custódio.
-                <b>Monitoring key pair usage through distributed ledgers and
-                    one-time signatures</b>.
-                Information 14, no. 10, pp. 523–537, sep. 2023.
-              </th>
-              <td>
-                <a href="https://doi.org/10.3390/info14100523">📃</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                L. P. Perin, G. Zambonin, R. Custódio, L. Moura, D. Panario.
-                <b>Improved constant-sum encodings for hash-based
-                    signatures</b>.
-                Journal of Cryptographic Engineering 11, no. 4, pp. 329–351,
-                jun. 2021.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1007/s13389-021-00264-9">📃</a>
-                <a href="https://github.com/zambonin/wots-cs">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                G. Zambonin.
-                <b>On the randomness of Rainbow signatures</b>.
-                Master's thesis, Universidade Federal de Santa Catarina,
-                oct. 2020.
-              </th>
-              <td>
-                <a href="https://repositorio.ufsc.br/handle/123456789/219497">📃</a>
-                <a href="https://github.com/zambonin/msc">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                G. Zambonin, M. S. P. Bittencourt, R. Custódio.
-                <b>Handling Vinegar Variables to Shorten Rainbow Private
-                    Keys</b>.
-                <abbr data-placement="bottom"
-                    data-tooltip="International Conference on Cryptology in Africa">
-                    AFRICACRYPT</abbr> 2019, pp. 391–408, jul. 2019.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1007/978-3-030-23696-0_20">📃</a>
-                <a href="https://github.com/matheuspb/rainbow-eta">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                L. P. Perin, G. Zambonin, D. M. B. Martins, R. Custódio,
-                J. E. Martina.
-                <b>Tuning the Winternitz Hash-Based Digital Signature
-                    Scheme</b>.
-                <abbr data-placement="bottom"
-                    data-tooltip="IEEE Symposium on Computers and Communications">
-                    ISCC</abbr> 2018, pp. 537–542, jun. 2018.
-              </th>
-              <td>
-                <a href="https://doi.org/10.1109/ISCC.2018.8538642">📃</a>
-                <a href="https://github.com/zambonin/xmss-reference">💽</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                G. Zambonin.
-                <span lang="pt-BR"><b>Otimização de desempenho do esquema de
-                        assinatura digital Winternitz</b></span>.
-                Bachelor thesis, Universidade Federal de Santa Catarina,
-                jun. 2018.
-              </th>
-              <td>
-                <a href="https://repositorio.ufsc.br/handle/123456789/187875">📃</a>
-                <a href="https://github.com/zambonin/bsc">💽</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </article>
+  <section id="teaching">
+    <h3>Ongoing supervisions</h3>
+    <dl>
+      <dt>
+        Usability of security ceremonies
+      </dt>
+      <dd>
+        V. L. Souza. Bachelor thesis in Information Systems, Universidade
+        Federal de Santa Catarina.
+        <nav>
+          <small>(supervisor, starting April 2025)</small>
+        </nav>
+      </dd>
+      <dt>
+        Zero-knowledge proofs for authentication
+      </dt>
+      <dd>
+        A. D. N. Silva. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina.
+        <nav>
+          <small>(co-supervisor, starting November 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Modification-tolerant signature schemes
+      </dt>
+      <dd>
+        L. C. T. Machado. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina.
+        <nav>
+          <small>(co-supervisor, starting June 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Optimizing Brazilian digital diplomas
+      </dt>
+      <dd>
+        L. C. P. Sousa. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina.
+        <nav>
+          <small>(supervisor, starting June 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Automatic generation of curriculum graphs and schedules
+      </dt>
+      <dd>
+        M. P. Novais. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina.
+        <nav>
+          <small>(supervisor, starting May 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Long-term integrity and reproducibility of program output via
+        source-to-object analysis
+      </dt>
+      <dd>
+        A. P. Gretter. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina.
+        <nav>
+          <small>(supervisor, starting March 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Fuzzing cryptographic libraries
+      </dt>
+      <dd>
+        E. Moraes. Bachelor thesis in Computer Science, Universidade Federal de
+        Santa Catarina.
+        <nav>
+          <small>(supervisor, starting March 2024)</small>
+        </nav>
+      </dd>
+    </dl>
+    <h3>Completed supervisions</h3>
+    <dl>
+      <dt>
+        Assinaturas digitais com referências externas para certificados de
+        chave pública
+      </dt>
+      <dd>
+        [Digital signatures with external references to public-key
+        certificates]<br>
+        M. Tomaszewski. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, December 2024.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/262543">Thesis</a>
+          <small>(co-supervisor, starting December 2022)</small>
+        </nav>
+      </dd>
+      <dt>
+        Modeling the SIM swap ceremony: integrating human behavior and formal
+        analysis
+      </dt>
+      <dd>
+        L. G. Rosa. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina, July 2024.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/255696">Thesis</a>
+          <small>(co-supervisor, starting March 2024)</small>
+        </nav>
+      </dd>
+      <dt>
+        Votação Eletrônica Pós-quântica Aplicada no Helios Voting
+      </dt>
+      <dd>
+        [Post-quantum electronic voting in the Helios framework]<br>
+        J. P. C. Barbosa. Bachelor thesis in Information Systems, Universidade
+        Federal de Santa Catarina, July 2024.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/255702">Thesis</a>
+          <small>(co-supervisor, starting May 2023)</small>
+        </nav>
+      </dd>
+      <dt>
+        Homomorphic encryption: introduction and applicabilities
+      </dt>
+      <dd>
+        A. B. Kamers. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina, December 2023.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/253329">Thesis</a>
+          <small>(co-supervisor, starting August 2022)</small>
+        </nav>
+      </dd>
+      <dt>
+        Esquema de assinatura digital tolerante a modificações
+      </dt>
+      <dd>
+        [A modification-tolerant digital signature scheme]<br>
+        P. O. Abel. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina, June 2023.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/248660">Thesis</a>
+          <small>(co-supervisor, starting June 2022)</small>
+        </nav>
+      </dd>
+      <dt>
+        Estudo de esquema de assinatura digital Dilithium
+      </dt>
+      <dd>
+        [A study of the Dilithium digital signature scheme]<br>
+        G. C. Biage. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina, July 2022.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/237989">Thesis</a>
+          <small>(co-supervisor, starting July 2021)</small>
+        </nav>
+      </dd>
+      <dt>
+        Reducing keys in Rainbow-like signature schemes
+      </dt>
+      <dd>
+        M. S. P. Bittencourt. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, December 2019.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/202514">Thesis</a>
+          <small>(co-supervisor, starting March 2019)</small>
+        </nav>
+      </dd>
+    </dl>
+    <h3>Assistantships</h3>
+    <dl>
+      <dt>
+        Security & AI
+        <small>Mar/25 – Jul/25</small>
+      </dt>
+      <dd>
+        Class
+        <a href="https://web.archive.org/web/20250523193353/https://planos.inf.ufsc.br/modulos/programas/visualizar.php?id=842">INE5448-08208</a>
+        (Special Topics in Technological Applications I), Bachelor's in
+        Computer Science, Universidade Federal de Santa Catarina.
+      </dd>
+      <dt>
+        Post Quantum Cryptography and Computation
+        <small>Aug/19 – Nov/19</small>
+      </dt>
+      <dd>
+        Class
+        <a href="https://web.archive.org/web/20200927165050/https://ppgcc.paginas.ufsc.br/files/2013/03/INE410134-Post-Quantum-Cryptography-and-Computation-Profs.-Cust%C3%B3dio-e-Jean.pdf">INE410134-41000025DO/ME</a>,
+        Graduate Program in Computer Science, Universidade Federal de Santa
+        Catarina.
+      </dd>
+      <dt>
+        Mathematical Foundations of Informatics
+        <small>Aug/18 – Dec/18</small>
+      </dt>
+      <dd>
+        Class
+        <a href="https://web.archive.org/web/20200929173841/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=2897">INE5601-01238A</a>,
+        Bachelor's in Information Systems, Universidade Federal de Santa
+        Catarina.
+      </dd>
+      <dt>
+        Probability and Statistics
+        <small>Mar/15 – Jul/15</small>
+      </dt>
+      <dd>
+        Class
+        <a href="https://web.archive.org/web/20201125013512/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=1905">INE5405-02208A</a>,
+        Bachelor's in Computer Science, Universidade Federal de Santa Catarina.
+      </dd>
+      <dt>
+        Probability and Statistics
+        <small>Aug/14 – Dec/14</small>
+      </dt>
+      <dd>
+        Class
+        <a href="https://web.archive.org/web/20200929155342/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=1778">INE5405-02208A</a>,
+        Bachelor's in Computer Science, Universidade Federal de Santa Catarina.
+      </dd>
+    </dl>
+  </section>
 
-    <article>
-      <h3>Professional experience</h3>
-      <p>
-        I also work as a consultant, helping private and public institutions
-        to solve complex problems related to information security.
-      </p>
-      <details>
-        <summary role="button">
-          See details about my previous experience here.
-        </summary>
-        <p>
-          Before starting my PhD, as part of the Computer Security Lab,
-          I mainly worked in the reference implementation and technical
-          specifications of the Brazilian Digital Signature Standard.
-        </p>
-        <ul>
-          <li>
-            <details>
-              <summary>
-                [Jan/2020–Feb/2024] Technical lead and researcher
-              </summary>
-              Supervised research and development efforts to add support for
-              quantum-safe cryptography, JAdES and trusted lists to current
-              standards, as well as further development of desktop, web and
-              mobile tools used in the Brazilian Public-Key Infrastructure
-              (ICP-Brasil) to generate and validate digital signatures.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Jan/2018–Dec/2019] Software developer and systems
-                administrator
-              </summary>
-              Led a major development effort towards modernizing the official
-              digital signature validation tool of ICP-Brasil, that resulted in
-              a responsive new web interface, an API that enables
-              headless/batch signature validation, enforced automated unit
-              testing and continuous deployment practices.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Nov/2016–Dec/2017] Junior software developer
-              </summary>
-              Developed a proof-of-concept signature validation module for
-              PDF.js and a small library able to easily customize and
-              instantiate most artifacts in a public-key infrastructure.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [May/2016–Oct/2016] Junior software developer
-              </summary>
-              Implemented support for CMS signatures (attached, detached or
-              embedded in PDFs) in the official digital signature validation
-              tool of ICP-Brasil.
-            </details>
-          </li>
-        </ul>
-        <p>
-          Some details about my consulting work are given below.
-        </p>
-        <ul>
-          <li>
-            <details>
-              <summary>
-                [Apr/2024–Today] Consultant on digital signatures
-              </summary>
-              In partnership with the <a href="https://onrcpn.org.br/">National
-                  Operator of the Civil Registry of Brazil</a>. I design and
-              develop solutions to enhance digital signature adoption in civil
-              registration and notary public processes.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Sep/2022–Mar/2023] Consultant on trusted lists
-              </summary>
-              In partnership with the
-              <a href="https://redgealc.org/">Electronic Government Network of
-                  Latin America and the Caribbean</a> (Red Gealc). Developed
-              tools to assist the usage of digital signatures in cross-border
-              operations via trusted lists, pursuant to ETSI standards.
-              <a href="https://web.archive.org/web/20221111193622/https://www.gov.br/iti/pt-br/assuntos/noticias/indice-de-noticias/iti-participa-da-vii-reuniao-ministerial-de-governo-digital-da-america-latina-e-caribe">🔗</a>
-              <a href="https://web.archive.org/web/20230924213208/https://www.redgealc.org/contenido-general/noticias/se-presento-la-lista-de-listas-de-confianza-para-la-firma-digital-entre-paises/">🔗</a>
-              <a href="https://web.archive.org/web/20221025152826/https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/iv-reunion-expertos-firma-digital">🔗</a>
-              <!-- https://www.flickr.com/photos/196863559@N05/52490956285/ -->
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Jan/2022–Mar/2022] Consultant on digital signature standards
-              </summary>
-              In partnership with private companies. Developed a tool to
-              validate digital diplomas, and accompanying files, according to
-              the standards maintained by the Ministry of Education of Brazil.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Dec/2020–Mar/2021] Computer forensic examiner
-              </summary>
-              In partnership with an intelligent transportation systems
-              company. Processed a complex dataset with native GNU/Linux tools
-              and used statistical techniques to verify the accuracy of the
-              classification of pictures taken by speed enforcement cameras.
-            </details>
-          <li>
-            <details>
-              <summary>
-                [Oct/2018–Nov/2020] Security ceremony agent
-              </summary>
-              In partnership with several Brazilian public
-              institutions. Provisioned secure servers to run online elections
-              through the end-to-end verifiable voting system Helios, with
-              reduced need for human-computer interaction.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Sep/2018–Mar/2019] Researcher of quantum-safe blockchain
-                protocols
-              </summary>
-              In partnership with a novel blockchain platform. Co-developed
-              a protocol to quantum-proof a blockchain, with secure
-              substitution of wallets, replacement of cryptographic algorithms
-              and zero downtime for the platform.
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>
-                [Sep/2017–Apr/2018] Computer forensic examiner
-              </summary>
-              In partnership with an intelligent transportation systems
-              company. Built a time series from various evidence sources
-              forming a complex dataset, used to ascertain the authenticity and
-              accuracy of pictures taken by speed enforcement cameras.
-            </details>
-          </li>
-        </ul>
-      </details>
-    </article>
+  <section id="service">
+    <h3>Research visits</h3>
+    <dl>
+      <dt id="mitacs">
+        <a href="https://web.archive.org/web/20240427072433/https://archive.is/RHxm4">
+          Mitacs-CALAREO Globalink Research Award
+        </a>
+        <small>Mar/20 – Jun/20</small>
+      </dt>
+      <dd>
+        Visiting researcher at Carleton University. Granted as the result of
+        a project to study the security of Rainbow-like signature schemes. Part
+        of my <a href="#msc">master's research</a>.
+      </dd>
+    </dl>
+    <h3>Talks</h3>
+    <dl>
+      <dt id="seccom-2025">
+        <a href="https://web.archive.org/web/20241217214125/https://seccom-ufsc.github.io/2024/">
+          Random generation of combinatorial objects in cryptographic systems
+        </a>
+        <small>Oct/24</small>
+      </dt>
+      <dd>
+        Speaker at the <strong>2024 CS & IS Academic Week</strong>
+        (Universidade Federal de Santa Catarina). Brief introduction on using
+        combinatorial unranking to perform uniform random generation of objects
+        for cryptosystems.
+      </dd>
+      <dt id="ufmg-2024">
+        <a href="https://web.archive.org/web/20241217225153/https://corposfinitos.wixsite.com/2024/?lang=en">
+          Cryptographic applications of restricted integer compositions
+        </a>
+        <small>Aug/24</small>
+      </dt>
+      <dd>
+        Speaker at the <strong>IV Workshop on Finite Fields and Applications</strong>
+        (Universidade Federal de Minas Gerais). Combinatorial view of
+        <a href="#constant-sum">10.1007/s13389-021-00264-9</a> and preliminary
+        improvements.
+      </dd>
+      <dt id="ocw-2021">
+        <a href="https://web.archive.org/web/20241217225637/http://www.fields.utoronto.ca/talks/Cryptographic-applications-weak-restricted-integer-compositions">
+          Cryptographic applications of weak restricted integer compositions
+        </a>
+        <small>Jun/21</small>
+      </dt>
+      <dd>
+        Speaker at the <strong>25th Ontario Combinatorics Workshop</strong>
+        (Queen's University). Combinatorial view of
+        <a href="#constant-sum">10.1007/s13389-021-00264-9</a> and preliminary
+        improvements.
+      </dd>
+      <dt id="irms-2021">
+        <a href="https://web.archive.org/web/20210224180413/https://www1.carleton.ca/ci/international_mobility_symposium_2020/">
+          Security analysis of the Rainbow-eta signature scheme
+        </a>
+        <small>Mar/21</small>
+      </dt>
+      <dd>
+        Speaker at the <strong>2021 International Research Mobility Symposium</strong>
+        (Carleton University). Results of a <a href="#mitacs">research award</a>.
+      </dd>
+      <dt id="sepex-2014">
+        <a href="https://web.archive.org/web/20150318060312/http://sepex.ufsc.br/minicursos/">
+          Data analysis with SEstatNet
+        </a>
+        <small>Oct/14</small>
+      </dt>
+      <dd>
+        Lecturer at the <strong>13th SEPEX</strong> (Universidade Federal de
+        Santa Catarina). Held a workshop on data analysis and processing with
+        a specialized tool developed at the university.
+      </dd>
+    </dl>
+    <h3>Evaluation boards</h3>
+    <dl>
+      <dt>
+        Prescrições médicas auto-soberanas: fortalecendo a segurança
+        e a privacidade
+      </dt>
+      <dd>
+        [Self-sovereign medical prescriptions: strengthening security and
+        privacy]<br>
+        T. V. Junckes. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, December 2023.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/253328">Thesis</a>
+          <small>(starting June 2023)</small>
+        </nav>
+      </dd>
+      <dt>
+        Protocolo ACME pós-quântico
+      </dt>
+      <dd>
+        [Post-quantum ACME protocol]<br>
+        M. O. Saldanha. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, March 2022.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/232972">Thesis</a>
+          <small>(starting June 2021)</small>
+        </nav>
+      </dd>
+      <dt>
+        Interoperabilidade em aplicações distribuídas: um estudo de DLTs como
+        infraestrutura para hospedagem de aplicações web
+      </dt>
+      <dd>
+        [Interoperability in distributed applications: using DLTs to host web
+        applications]<br>
+        R. S. A. Palma. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, September 2021.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/228235">Thesis</a>
+          <small>(starting September 2019)</small>
+        </nav>
+      </dd>
+      <dt>
+        Implementing a library to provide Winternitz signatures with
+        lightweight primitive using the Rust Programming Language
+      </dt>
+      <dd>
+        L. M. Athayde. Bachelor thesis in Computer Science, Universidade
+        Federal de Santa Catarina, May 2021.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/223678">Thesis</a>
+          <small>(starting August 2019)</small>
+        </nav>
+      </dd>
+      <dt>
+        Verificação de eleição utilizando blockchain
+      </dt>
+      <dd>
+        [Verifiable elections with blockchain]<br>
+        V. Macelai. Bachelor thesis in Computer Science, Universidade Federal
+        de Santa Catarina, December 2019.
+        <nav>
+          <a href="https://repositorio.ufsc.br/handle/123456789/202724">Thesis</a>
+          <small>(starting March 2019)</small>
+        </nav>
+      </dd>
+    </dl>
+    <h3>Other service</h3>
+    <dl>
+      <dt>
+        Peer reviewer
+        <small>Jan/20 – Today</small>
+      </dt>
+      <dd>
+        Reviewed for
+        <a href="https://link.springer.com/journal/10623">Designs, Codes and Cryptography</a>
+        and
+        <a href="https://web.archive.org/web/20241009014428/https://www.espe.edu.ec/latincrypt/">LATINCRYPT 2023</a>.
+      </dd>
+      <dt>
+        <a href="https://web.archive.org/web/20241217221740/https://notes.ufsc.br/aplic/boletim.nsf/3f3a06701f450e330325630d004c4e29/db89c3970a02317a8325844f0051a2e4?OpenDocument&Highlight=2,zambonin">
+          Student representative
+        </a>
+        <small>May/19 – May/20</small>
+      </dt>
+      <dd>
+        Elected by peers for the Graduate Program's governing bodies
+        (<i>colegiados</i>). Represented other students in decision-making and
+        served on the Scholarships Committee.
+      </dd>
+      <dt>
+        <a href="https://web.archive.org/web/20241217221228/https://notes.ufsc.br/aplic/boletim.nsf/3f3a06701f450e330325630d004c4e29/3c1381fa9fd0557c8325847a005a4b8b?OpenDocument&Highlight=2,zambonin">
+          Student member
+        </a>
+        <small>Sep/19 – Oct/19</small>
+      </dt>
+      <dd>
+        Volunteered to be part of the Election Commission for the Graduate
+        Program's directorship. Audited the election and verified its results
+        for the 2019–2021 term.
+      </dd>
+      <dt>
+        <a href="https://web.archive.org/web/20181018112028/http://semanadabio.ufsc.br/">
+          Co-organizer
+        </a>
+        <small>Apr/18 – Dec/18</small>
+      </dt>
+      <dd>
+        <strong>19th Biology Academic Week</strong> at the Universidade Federal
+        de Santa Catarina. Developed an attendance system to accurately provide
+        certificates to students and community.
+      </dd>
+    </dl>
+  </section>
 
-    <article>
-      <h3>Academic activities</h3>
-      <p>
-        I frequently look forward to complementing my research & development
-        work with other exciting projects.
-      </p>
-      <details open>
-        <summary role="button">
-          This is mostly for my own record, but feel free to check it out.
-        </summary>
-        <details>
-          <summary>Research visits</summary>
-          <ul>
-            <li>
-              <details>
-                <summary>
-              [Mar/2020–Jun/2020]
-              <a href="https://web.archive.org/web/20240427072433/https://archive.is/RHxm4">Mitacs-CALAREO Globalink
-                  Research Award</a>
-                </summary>
-                Granted as the result of a project to study the security of
-                Rainbow-like signature schemes at Carleton University.
-              </details>
-            </li>
-          </ul>
-        </details>
+  <section id="work">
+    <h3>Independent work</h3>
+    <dl>
+      <dt>
+        Consultant on digital signatures
+        <small>Apr/24 – Today</small>
+      </dt>
+      <dd>
+        In partnership with the
+        <a href="https://onrcpn.org.br/">National Operator of the Civil Registry of Brazil</a>.
+        I design and develop solutions to enhance digital signature adoption in
+        civil registration and notary public processes.
+      </dd>
+      <dt>
+        Consultant on trusted lists
+        <small>Sep/22 – Mar/23</small>
+      </dt>
+      <dd>
+        In partnership with the
+        <a href="https://redgealc.org/">Electronic Government Network of Latin America and the Caribbean</a>
+        (Red Gealc). Developed tools to assist the usage of digital signatures
+        in cross-border operations via trusted lists, pursuant to ETSI
+        standards.
 
-        <details>
-          <summary>Teaching assistantships</summary>
-          <ul>
-            <li>
-            <details>
-              <summary>
-                [Mar/2025–Jul/2025] INE5448 - Special Topics in Technological
-                Applications I
-              </summary>
-              Class no.
-              <a href="https://web.archive.org/web/20250523193353/https://planos.inf.ufsc.br/modulos/programas/visualizar.php?id=842">08208</a>,
-              Computer Science @ UFSC.
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Aug/2019–Nov/2019] INE410134 - Post Quantum Cryptography and
-                  Computation
-                </summary>
-                Class no.
-                <a href="https://web.archive.org/web/20200927165050/https://ppgcc.paginas.ufsc.br/files/2013/03/INE410134-Post-Quantum-Cryptography-and-Computation-Profs.-Cust%C3%B3dio-e-Jean.pdf">41000025DO/ME</a>,
-                Graduate Program in Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Aug/2018–Dec/2018] INE5601 - Mathematical Foundations of
-                  Informatics
-                </summary>
-                Class no.
-                <a href="https://web.archive.org/web/20200929173841/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=2897">01238A</a>,
-                Information Systems @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2015–Jul/2015] INE5405 - Probability and Statistics
-                </summary>
-                Class no.
-                <a href="https://web.archive.org/web/20201125013512/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=1905">02208A</a>,
-                Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Aug/2014–Dec/2014] INE5405 - Probability and Statistics
-                </summary>
-                Class no.
-                <a href="https://web.archive.org/web/20200929155342/https://planos.inf.ufsc.br/modulos/planos/visualizar.php?id=1778">02208A</a>,
-                Computer Science @ UFSC.
-              </details>
-            </li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Involvement in BSc theses</summary>
-          <ul>
-            <li>
-              <details>
-                <summary>
-                  [Apr/2025–Today] V. L. Souza, supervisor
-                </summary>
-                Thesis on security ceremonies in preparation, Information
-                Systems @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Nov/2024–Today] A. D. N. Silva, co-supervisor
-                </summary>
-                Thesis on zero-knowledge proofs in preparation, Computer
-                Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jun/2024–Today] L. C. T. Machado, co-supervisor
-                </summary>
-                Thesis on modification-tolerant signature schemes in
-                preparation, Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jun/2024–Today] L. C. P. Sousa, supervisor
-                </summary>
-                Thesis on optimizing Brazilian digital diplomas in preparation,
-                Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [May/2024–Today] M. P. Novais, supervisor
-                </summary>
-                Thesis on automatic generation of curriculum graphs and
-                schedules in preparation, Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2024–Today] A. P. Gretter, supervisor
-                </summary>
-                Thesis on long-term integrity and reproducibility of program
-                output via source-to-object analysis in preparation, Computer
-                Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2024–Today] E. Moraes, supervisor
-                </summary>
-                Thesis on fuzzing cryptographic libraries in preparation,
-                Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Dec/2022–Dec/2024] M. Tomaszewski, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/262543">
-                  Assinaturas digitais com referências externas para
-                  certificados de chave pública</a> [Digital signatures
-                with external references to public-key certificates],
-                Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2024–Jul/2024] L. G. Rosa, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/255696">
-                  Modeling the SIM swap ceremony: integrating human behavior
-                  and formal analysis</a>, Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [May/2023–Jul/2024] J. P. C. Barbosa, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/255702">
-                  Votação Eletrônica Pós-quântica Aplicada no Helios
-                  Voting</a> [Post-quantum electronic voting in the
-                Helios framework], Information Systems @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jun/2023–Dec/2023] T. V. Junckes, member of evaluation board
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/253328">
-                  Prescrições médicas auto-soberanas: fortalecendo
-                  a segurança e a privacidade</a> [Self-sovereign medical
-                prescriptions: strengthening security and privacy], Computer
-                Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Aug/2022–Dec/2023] A. B. Kamers, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/253329">
-                  Homomorphic encryption: introduction and
-                  applicabilities</a>, Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jun/2022–Jun/2023] P. O. Abel, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/248660">
-                  Esquema de assinatura digital tolerante a modificações</a>
-                [A modification-tolerant digital signature scheme], Computer
-                Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jul/2021–Jul/2022] G. C. Biage, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/237989">
-                  Estudo de esquema de assinatura digital Dilithium</a> [A
-                study of the Dilithium digital signature scheme], Computer
-                Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Jun/2021–Mar/2022] M. O. Saldanha, member of evaluation board
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/232972">
-                  Protocolo ACME pós-quântico</a> [Post-quantum ACME
-                protocol], Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Sep/2019–Sep/2021] R. S. A. Palma, member of evaluation board
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/228235">
-                  Interoperabilidade em aplicações distribuídas: um estudo de
-                  DLTs como infraestrutura para hospedagem de aplicações
-                  web</a> [Interoperability in distributed applications:
-                using DLTs to host web applications], Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Aug/2019–May/2021] L. M. Athayde, member of evaluation board
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/223678">
-                  Implementing a library to provide Winternitz signatures with
-                  lightweight primitive using the Rust Programming
-                  Language</a>, Computer Science @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2019–Dec/2019] V. Macelai, member of evaluation board
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/202724">
-                  Verificação de eleição utilizando blockchain</a>
-                [Verifiable elections with blockchain], Computer Science
-                @ UFSC.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                  [Mar/2019–Dec/2019] M. S. P. Bittencourt, co-supervisor
-                </summary>
-                Thesis named
-                <a href="https://repositorio.ufsc.br/handle/123456789/202514">
-                  Reducing keys in Rainbow-like signature schemes</a>, Computer
-                Science @ UFSC.
-              </details>
-            </li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Talks</summary>
-          <ul>
-            <li>
-            <details>
-              <summary>
-              [Oct/2024] Speaker ("Random generation of combinatorial objects
-              in cryptographic systems"),
-              <a href="https://web.archive.org/web/20241217214125/https://seccom-ufsc.github.io/2024/">2024 CS & IS
-                  Academic Week</a> at UFSC
-              </summary>
-                Brief introduction on using combinatorial unranking to perform
-                uniform random generation of objects for cryptosystems.
-              </details>
-            </li>
-            <li>
-            <details>
-              <summary>
-              [Aug/2024] Speaker ("Cryptographic applications of restricted
-              integer compositions"),
-              <a href="https://web.archive.org/web/20241217225153/https://corposfinitos.wixsite.com/2024/?lang=en">IV Workshop on Finite Fields
-                  and Applications</a> at the Universidade Federal de Minas
-              Gerais
-              </summary>
-                Combinatorial view of
-                <a href="https://doi.org/10.1007/s13389-021-00264-9">
-                  <code>doi:10.1007/s13389-021-00264-9</code></a>
-                and preliminary improvements.
-              </details>
-            </li>
-            <li>
-            <details>
-              <summary>
-              [Jun/2021] Speaker
-              ("<a href="https://web.archive.org/web/20241217225637/http://www.fields.utoronto.ca/talks/Cryptographic-applications-weak-restricted-integer-compositions">Cryptographic applications
-                  of weak restricted integer compositions</a>"),
-              <a href="https://web.archive.org/web/20210925053529/http://www.fields.utoronto.ca/activities/20-21/combinatorics">25th Ontario Combinatorics
-                  Workshop</a> at Queen's University
-              </summary>
-                Combinatorial view of
-                <a href="https://doi.org/10.1007/s13389-021-00264-9">
-                  <code>doi:10.1007/s13389-021-00264-9</code></a>
-                and preliminary improvements.
-              </details>
-            </li>
-            <li>
-            <details>
-              <summary>
-              [Mar/2021] Speaker ("Security analysis of the Rainbow-eta
-              signature scheme"), <a href="https://web.archive.org/web/20210224180413/https://www1.carleton.ca/ci/international_mobility_symposium_2020/">2021
-                International Research Mobility Symposium</a> at Carleton
-              University
-              </summary>
-                Results of research conducted under the auspices of a received
-                Mitacs-CALAREO Globalink Research Award.
-              </details>
-            </li>
-            <li>
-            <details>
-              <summary>
-              [Oct/2014] Lecturer ("Data analysis with
-              <a href="https://web.archive.org/web/20140612190811/http://www.sestatnet.ufsc.br/">SEstatNet</a>"),
-              13th <a href="https://web.archive.org/web/20150318060312/http://sepex.ufsc.br/minicursos/">SEPEX</a> at UFSC
-              </summary>
-                Held a workshop on data analysis and processing with
-                a specialized tool developed inside the university.
-              </details>
-            </li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Service</summary>
-          <ul>
-            <li>
-              <details>
-                <summary>
-                [May/2019–May/2020] <a href="https://web.archive.org/web/20241217221740/https://notes.ufsc.br/aplic/boletim.nsf/3f3a06701f450e330325630d004c4e29/db89c3970a02317a8325844f0051a2e4?OpenDocument&Highlight=2,zambonin">Student
-                  representative</a>, Deputy and Full Councils of the Graduate
-                Program in Computer Science at UFSC
-                </summary>
-                  Elected by peers to be a member of the legislative bodies of
-                  the Program. Part of the Scholarships Committee.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                [Sep/2019–Oct/2019] <a href="https://web.archive.org/web/20241217221228/https://notes.ufsc.br/aplic/boletim.nsf/3f3a06701f450e330325630d004c4e29/3c1381fa9fd0557c8325847a005a4b8b?OpenDocument&Highlight=2,zambonin">Student
-                  member</a>, Electoral Commission for election of Director and
-                Associate Director of the Graduate Program in Computer Science
-                at UFSC
-                </summary>
-                  Audited the election and verified its results for the
-                  2019–2021 term.
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>
-                [Apr/2018–Dec/2018] Co-organizer, 19th
-                <a href="https://web.archive.org/web/20181018112028/http://semanadabio.ufsc.br/">Biology Academic Week</a> at UFSC
-                </summary>
-                  Developed an attendance system to accurately provide
-                  certificates to students and community.
-              </details>
-            </li>
-            <li>
-              Peer review in <a href="https://link.springer.com/journal/10623">
-                  Designs, Codes and Cryptography</a> and
-              <abbr data-placement="bottom"
-                data-tooltip="International Conference on Cryptology and
-                              Information Security in Latin America">
-                  <a href="https://web.archive.org/web/20241009014428/https://www.espe.edu.ec/latincrypt/">
-                    LATINCRYPT 2023</a></abbr>.
-            </li>
-          </ul>
-        </details>
-      </details>
-    </article>
-  </main>
+        <!-- https://www.flickr.com/photos/196863559@N05/52490956285/ -->
+        Featured in the news
+        <a href="https://web.archive.org/web/20221111193622/https://www.gov.br/iti/pt-br/assuntos/noticias/indice-de-noticias/iti-participa-da-vii-reuniao-ministerial-de-governo-digital-da-america-latina-e-caribe">at least</a>
+        <a href="https://web.archive.org/web/20230924213208/https://www.redgealc.org/contenido-general/noticias/se-presento-la-lista-de-listas-de-confianza-para-la-firma-digital-entre-paises/">three</a>
+        <a href="https://web.archive.org/web/20221025152826/https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/iv-reunion-expertos-firma-digital">times</a>.
+      </dd>
+      <dt>
+        Consultant on digital signature standards
+        <small>Jan/22 – Mar/22</small>
+      </dt>
+      <dd>
+        In partnership with private companies. Developed a tool to validate
+        digital diplomas, and accompanying files, according to the standards
+        maintained by the Ministry of Education of Brazil.
+      </dd>
+      <dt>
+        Computer forensic examiner
+        <small>Dec/20 – Mar/21</small>
+      </dt>
+      <dd>
+        In partnership with an intelligent transportation systems
+        company. Processed a complex dataset with native GNU/Linux tools and
+        used statistical techniques to verify the accuracy of the
+        classification of pictures taken by speed enforcement cameras.
+      </dd>
+      <dt>
+        Security ceremony agent
+        <small>Oct/18 – Nov/20</small>
+      </dt>
+      <dd>
+        In partnership with several Brazilian public institutions. Provisioned
+        secure servers to run online elections through the end-to-end
+        verifiable voting system Helios, with reduced need for human-computer
+        interaction.
+      </dd>
+      <dt>
+        Researcher of quantum-safe blockchain protocols
+        <small>Sep/18 – Mar/19</small>
+      </dt>
+      <dd>
+        In partnership with a novel blockchain platform. Co-developed
+        a protocol to quantum-proof a blockchain, with secure substitution of
+        wallets, replacement of cryptographic algorithms and zero downtime for
+        the platform.
+      </dd>
+      <dt>
+        Computer forensic examiner
+        <small>Sep/17 – Apr/18</small>
+      </dt>
+      <dd>
+        In partnership with an intelligent transportation systems
+        company. Built a time series from various evidence sources forming
+        a complex dataset, used to ascertain the authenticity and accuracy of
+        pictures taken by speed enforcement cameras.
+      </dd>
+    </dl>
+    <h3>Computer Security Lab (UFSC)</h3>
+    <dl>
+      <dt>
+        Technical lead and researcher
+        <small>Jan/20 – Feb/24</small>
+      </dt>
+      <dd>
+        Supervised research and development efforts to add support for
+        quantum-safe cryptography, JAdES and trusted lists to normatives, as
+        well as further development of desktop, web and mobile tools used in
+        the Brazilian Public-Key Infrastructure (ICP-Brasil) to generate and
+        validate digital signatures.
+      </dd>
+      <dt>
+        Software developer and systems administrator
+        <small>Jan/18 – Dec/19</small>
+      </dt>
+      <dd>
+        Led a major development effort towards modernizing the official digital
+        signature validation tool of ICP-Brasil, that resulted in a responsive
+        new web interface, an API that enables headless/batch signature
+        validation, enforced automated unit testing and continuous deployment
+        practices.
+      </dd>
+      <dt>
+        Junior software developer
+        <small>Nov/16 – Dec/17</small>
+      </dt>
+      <dd>
+        Developed a proof-of-concept signature validation module for PDF.js and
+        a small library able to easily customize and instantiate most artifacts
+        in a public-key infrastructure.
+      </dd>
+      <dt>
+        Junior software developer
+        <small>May/16 – Oct/16</small>
+      </dt>
+      <dd>
+        Implemented support for CMS signatures (attached, detached or embedded
+        in PDFs) in the official digital signature validation tool of
+        ICP-Brasil.
+      </dd>
+    </dl>
+  </section>
 </body>
 
 </html>

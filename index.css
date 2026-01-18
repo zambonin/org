@@ -1,0 +1,162 @@
+:root {
+  --width: 800px;
+  --textcolor: #121212;
+  --bgcolor: #ffffff;
+  --body-bg: #f4f4f4;
+  --highlight: #2749c9;
+  --dim: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textcolor: #e0e0e0;
+    --bgcolor: #121212;
+    --body-bg: #000000;
+    --highlight: #f0a000;
+    --dim: #aaaaaa;
+  }
+}
+
+html {
+  background: var(--body-bg);
+}
+
+* {
+  box-sizing: border-box;
+  text-align: justify;
+  hyphens: auto;
+}
+
+body {
+  font-size: 18px;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--textcolor);
+  max-width: var(--width);
+  margin: 0 auto;
+  background: var(--bgcolor);
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  color: var(--dim);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.75);
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight);
+  border-bottom: 1px solid transparent;
+}
+
+a:hover,
+a:focus-visible {
+  border-bottom-color: var(--highlight);
+  outline: none;
+}
+
+a[href^="http"]::after,
+a[href^=mailto]::after,
+a[href^=static]::after {
+  content: " ↗";
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+header {
+  padding: 2rem 2rem 0;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  position: sticky;
+  background: var(--bgcolor);
+}
+
+header h1 {
+  font-size: 1.3em;
+  flex: 1;
+}
+
+header h1 a {
+  color: var(--textcolor);
+  border: none;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+header nav a {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+section {
+  padding: 2rem 2rem 1rem;
+  display: none;
+  scroll-margin-top: 16rem;
+}
+
+section:target,
+section:has(:target),
+section#about {
+  display: block;
+}
+
+body:has(section:not(#about):target) #about,
+body:has(section:not(#about) :target) #about {
+  display: none;
+}
+
+dl {
+  margin-bottom: 2rem;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--textcolor);
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+dt:target {
+  color: var(--highlight);
+}
+
+dt small {
+  font-weight: normal;
+  color: var(--dim);
+}
+
+dd {
+  margin-left: 0;
+  color: var(--dim);
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+dd nav {
+  padding: 0;
+  margin: 0.3rem 0 0 0;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+dd nav a {
+  margin-right: 1rem;
+}
+
+dd nav small {
+  margin-left: auto;
+  color: var(--dim);
+}
