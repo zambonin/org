@@ -1,15 +1,17 @@
 \documentclass[12pt]{article}
 
 \usepackage[english]{babel}
-\usepackage[a4paper, top=1cm, bottom=1cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[a4paper, margin=1.25cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[OT1]{fontenc}
 \usepackage[datesep={}]{datetime2}
-\makeatletter\let\saved@bibitem\@bibitem\makeatother
-\usepackage[colorlinks, urlcolor={purple!75!black}, plainpages=true]{hyperref}
-\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\usepackage[colorlinks, allcolors={purple!75!black}, plainpages=false]{hyperref}
 \usepackage[sfdefault]{quattrocento}
-\usepackage{array, bibentry, ifthen, multirow, parskip, xcolor, pifont}
+\usepackage[style=trad-abbrv, sorting=ddnt]{biblatex}
+\usepackage{array, csquotes, ifthen, multirow, parskip, xcolor, pifont}
+
+\IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{}
+\renewcommand*{\bibfont}{\normalfont\small}
 
 \newcommand*{\ruleline}[2]{%
     \makebox[\linewidth]{#1{\color{purple!75!black}
@@ -51,7 +53,7 @@
 
 \begin{headertable}
   \headerrow{About \\[1ex] \scriptsize{(rev. \DTMtoday)}}{
-    I am an information security consultant with 7+ years of experience and
+    I am an information security consultant with 10+ years of experience and
     a solid academic background. I was a former lead of technical research and
     development for the Brazilian Digital Signature Standard. I specialize in
     quantum-safe cryptography and public-key infrastructures.
@@ -121,9 +123,10 @@
   \contentrow
     {MSc in Computer Science}
     {
-      from UFSC (thesis:
-      ``\href{https://repositorio.ufsc.br/handle/123456789/219497}{On the
-      randomness of Rainbow signatures}'')
+      from UFSC (see thesis
+      \IfFileExists{\jobname.bib}
+        {at \cite{Zambonin:202010}}
+        {\href{https://repositorio.ufsc.br/handle/123456789/219497}{here}})
     }
     {Aug/2018}
     {Sep/2020}
@@ -137,9 +140,10 @@
   \contentrow
     {BSc in Computer Science}
     {
-      from UFSC (thesis:
-      ``\href{https://repositorio.ufsc.br/handle/123456789/187875}{Performance
-      optimization for the Winternitz signature scheme}'')
+      from UFSC (see thesis
+      \IfFileExists{\jobname.bib}
+        {at \cite{Zambonin:201806}}
+        {\href{https://repositorio.ufsc.br/handle/123456789/187875}{here}})
     }
     {Mar/2013}
     {Jul/2018}
@@ -166,34 +170,8 @@ specifically older than myself and most songs with a saxophone line. 8)
 \IfFileExists{\jobname.bib}{
 \rulesection{Publications}
 
-\nobibliography*
-
-\bibentry{Zambonin:202601}.
-
-\bibentry{Zambonin:202512}.
-
-\bibentry{Martina:202412}.
-
-\bibentry{Kamers:202603}.
-
-\bibentry{Barbosa:202506}.
-
-\bibentry{Rosa:202504}.
-
-\bibentry{Kamers:202409}.
-
-\bibentry{Biage:202401}.
-
-\bibentry{Mayr:202309}.
-
-\bibentry{Perin:202106}.
-
-\bibentry{Zambonin:201907}.
-
-\bibentry{Perin:201806}.
-
-\bibliographystyle{abbrvurl}
-\nobibliography{\jobname}
+\nocite{*}
+\printbibliography[heading=none]
 }{}
 
 \end{document}
