@@ -48,6 +48,7 @@ a {
   text-decoration: none;
   color: var(--highlight);
   border-bottom: 1px solid transparent;
+  cursor: pointer;
 }
 
 a:hover,
@@ -59,8 +60,17 @@ a:focus-visible {
 a[href^="http"]::after,
 a[href^=mailto]::after,
 a[href^=static]::after {
-  content: " ↗";
+  content: "↗";
   display: inline-block;
+  margin-left: 0.3em;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+dd nav a[href^="#"]::after {
+  content: "↵";
+  display: inline-block;
+  margin-left: 0.3em;
   text-decoration: none;
   opacity: 0.5;
 }
