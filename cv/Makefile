@@ -1,17 +1,12 @@
 OUTPUT_DIR = ../static
-SRC = cv.tex
-OUT = $(SRC:.tex=.pdf)
 
-cv: $(OUT)
+all: $(OUTPUT_DIR)/cv.pdf $(OUTPUT_DIR)/cv-with-publ.pdf
 
-publ: JOB = publ
-publ: $(OUT)
+$(OUTPUT_DIR)/cv.pdf: cv.tex .latexmkrc
+	latexmk $<
 
-%.pdf: %.tex
-	latexmk -outdir=$(OUTPUT_DIR) -interaction=nonstopmode -jobname=$(JOB) \
-		-shell-escape -pdf -use-make -cd $<
+$(OUTPUT_DIR)/cv-with-publ.pdf: cv.tex cv-with-publ.bib .latexmkrc
+	latexmk -jobname=cv-with-publ $<
 
 clean:
-	latexmk -outdir=$(OUTPUT_DIR) -cd -C -jobname=cv
-	latexmk -outdir=$(OUTPUT_DIR) -cd -C -jobname=publ
-	$(RM) $(OUTPUT_DIR)/*.bbl
+	$(RM) -r .build $(OUTPUT_DIR)/cv.pdf $(OUTPUT_DIR)/cv-with-publ.pdf
