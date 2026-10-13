@@ -37,12 +37,42 @@ jobs:
             ghcr.io/xu-cheng/texlive-alpine@sha256:c06416ebbc69c8e90e07d1f1a6f7a3f9b334e773daa3543ce879ea533317c3a7 \
             make -C cv
 
+      - name: Create read-only PDF token
+        id: pdf-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.PDF_APP_CLIENT_ID }}
+          private-key: ${{ secrets.PDF_APP_PRIVATE_KEY }}
+          owner: zambonin
+          repositories: phd
+          permission-contents: read
+
+      - name: Check out private PDFs
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: zambonin/phd
+          ref: main
+          token: ${{ steps.pdf-token.outputs.token }}
+          path: _sources/phd
+          sparse-checkout: doc
+          persist-credentials: false
+
       - name: Assemble website
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p _site/static
           cp index.html CNAME .nojekyll _site/
           cp -a static/. _site/static/
+
+          cp _sources/phd/doc/20260510-cbcrypto/abstract.pdf _site/static/20260510-cbcrypto-abstract.pdf
+          cp _sources/phd/doc/20260510-cbcrypto/slides.pdf _site/static/20260510-cbcrypto-slides.pdf
+          cp _sources/phd/doc/20240808-iv-wcfa/abstract.pdf _site/static/20240808-iv-wcfa-abstract.pdf
+          cp _sources/phd/doc/20240808-iv-wcfa/slides.pdf _site/static/20240808-iv-wcfa-slides.pdf
+          cp _sources/phd/doc/20241021-seccom/slides.pdf _site/static/20241021-seccom-slides.pdf
+          cp _sources/phd/doc/20210606-ocw/abstract.pdf _site/static/20210606-ocw-abstract.pdf
+          cp _sources/phd/doc/20210606-ocw/slides.pdf _site/static/20210606-ocw-slides.pdf
+          cp _sources/phd/doc/20230713-labsec-day/slides.pdf _site/static/20230713-labsec-day-slides.pdf
 
       - name: Upload website
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
