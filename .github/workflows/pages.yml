@@ -60,53 +60,27 @@ jobs:
           sparse-checkout: doc
           persist-credentials: false
 
-      - name: Check out papers
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          repository: zambonin/papers
-          ref: master
-          token: ${{ steps.pdf-token.outputs.token }}
-          path: _sources/papers
-          sparse-checkout: |
-            201806-iscc
-            201907-africacrypt
-            202106-j-crypt-eng
-            202409-sbseg
-            202503-spw
-            202504-aina
-            202506-acns
-            202604-latin
-            202606-iwoca
-            202607-icms
-            styles
-          persist-credentials: false
-
-      - name: Build manuscripts and slides
+      - name: Download released manuscripts and slides
+        env:
+          GH_TOKEN: ${{ steps.pdf-token.outputs.token }}
+        shell: bash
         run: |
-          docker run --rm \
-            --user "$(id -u):$(id -g)" \
-            --volume "$PWD:/workspace" \
-            --workdir /workspace \
-            "$TEX_IMAGE" \
-            make -C _sources/papers \
-              201806-iscc/main.pdf \
-              201907-africacrypt/main.pdf \
-              202106-j-crypt-eng/main.pdf \
-              202503-spw/main.pdf \
-              202504-aina/main.pdf \
-              202506-acns/main.pdf \
-              202604-latin/main.pdf \
-              202606-iwoca/main.pdf \
-              202607-icms/main.pdf \
-              201806-iscc/slides/main.pdf \
-              201907-africacrypt/slides/main.pdf \
-              202409-sbseg/slides/main.pdf \
-              202503-spw/slides/main.pdf \
-              202504-aina/slides/main.pdf \
-              202506-acns/slides/main.pdf \
-              202604-latin/slides/main.pdf \
-              202606-iwoca/slides/main.pdf \
-              202607-icms/slides/main.pdf
+          set -euo pipefail
+          mkdir -p _sources/paper-pdfs
+          for release_tag in \
+            201806-iscc \
+            201907-africacrypt \
+            202106-j-crypt-eng \
+            202409-sbseg \
+            202503-spw \
+            202504-aina \
+            202506-acns \
+            202604-latin \
+            202606-iwoca \
+            202607-icms; do
+            gh release download "$release_tag" --repo zambonin/papers \
+              --pattern '*.pdf' --dir _sources/paper-pdfs
+          done
 
       - name: Assemble website
         shell: bash
@@ -125,24 +99,7 @@ jobs:
           cp _sources/phd/doc/20210606-ocw/slides.pdf _site/static/20210606-ocw-slides.pdf
           cp _sources/phd/doc/20230713-labsec-day/slides.pdf _site/static/20230713-labsec-day-slides.pdf
 
-          cp _sources/papers/201806-iscc/main.pdf _site/static/201806-iscc-preprint.pdf
-          cp _sources/papers/201907-africacrypt/main.pdf _site/static/201907-africacrypt-preprint.pdf
-          cp _sources/papers/202106-j-crypt-eng/main.pdf _site/static/202106-j-crypt-eng-preprint.pdf
-          cp _sources/papers/202503-spw/main.pdf _site/static/202503-spw-preprint.pdf
-          cp _sources/papers/202504-aina/main.pdf _site/static/202504-aina-preprint.pdf
-          cp _sources/papers/202506-acns/main.pdf _site/static/202506-acns-preprint.pdf
-          cp _sources/papers/202604-latin/main.pdf _site/static/202604-latin-preprint.pdf
-          cp _sources/papers/202606-iwoca/main.pdf _site/static/202606-iwoca-preprint.pdf
-          cp _sources/papers/202607-icms/main.pdf _site/static/202607-icms-preprint.pdf
-          cp _sources/papers/201806-iscc/slides/main.pdf _site/static/201806-iscc-slides.pdf
-          cp _sources/papers/201907-africacrypt/slides/main.pdf _site/static/201907-africacrypt-slides.pdf
-          cp _sources/papers/202409-sbseg/slides/main.pdf _site/static/202409-sbseg-slides.pdf
-          cp _sources/papers/202503-spw/slides/main.pdf _site/static/202503-spw-slides.pdf
-          cp _sources/papers/202504-aina/slides/main.pdf _site/static/202504-aina-slides.pdf
-          cp _sources/papers/202506-acns/slides/main.pdf _site/static/202506-acns-slides.pdf
-          cp _sources/papers/202604-latin/slides/main.pdf _site/static/202604-latin-slides.pdf
-          cp _sources/papers/202606-iwoca/slides/main.pdf _site/static/202606-iwoca-slides.pdf
-          cp _sources/papers/202607-icms/slides/main.pdf _site/static/202607-icms-slides.pdf
+          cp _sources/paper-pdfs/*.pdf _site/static/
 
       - name: Upload website
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
