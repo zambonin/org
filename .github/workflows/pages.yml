@@ -87,7 +87,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/static
-          cp index.html CNAME .nojekyll _site/
+          cp index.html CNAME .nojekyll robots.txt sitemap.txt _site/
           cp -a static/. _site/static/
 
           cp _sources/phd/doc/20260510-cbcrypto/abstract.pdf _site/static/20260510-cbcrypto-abstract.pdf
